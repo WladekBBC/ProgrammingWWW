@@ -4,38 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Prosty szkielet MPA – podstrona" />
-    <meta name="author" content="Base Template" />
+    <meta name="author" content="" />
     <link rel="icon" type="image/jpeg" href="../content/faviconOF.jpg" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="../style.css" />
     <script defer src="../script.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="../index.html">Main</a>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="../index.html">Home</a>
         <button
-          class="nav-toggle"
+          class="sidebar-toggle"
           aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Toggle navigation"
+          aria-controls="sidebar"
+          aria-label="Toggle sidebar"
         >
-          ☰
+          ✕
         </button>
-        <nav id="site-nav" class="site-nav">
-          <a href="../index.html" class="nav-link" data-nav>Home</a>
-          <a
+      </div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link" data-nav>Strona główna</a>
+        <a href="../steps-page/steps.html" class="nav-link" data-nav>Kroki</a>
+        <a href="../gallery-page/gallery.html" class="nav-link" data-nav
+          >Galeria</a
+        >
+        <a
             href="./contactUs.html"
             class="nav-link"
             data-nav
             aria-current="page"
-            >Example page</a
+            >Strona kontaktowa</a
           >
-        </nav>
-      </div>
-    </header>
+      </nav>
+    </aside>
 
-    <main class="container">
+    <div class="main-content">
+      <header class="site-header">
+        <div class="container header-inner">
+          <button
+            class="mobile-nav-toggle"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            aria-label="Toggle navigation"
+          >
+            ☰
+          </button>
+          <h1 class="page-title">Contact Us</h1>
+        </div>
+      </header>
+
+      <main class="container">
       <article class="card">
         <h1>Strona kontaktowa</h1>
         <form
@@ -101,12 +120,13 @@
           </fieldset>
         </form>
       </article>
-    </main>
+      </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small>© Vladyslav Berezhnyi</small>
-      </div>
-    </footer>
+      <footer class="site-footer">
+        <div class="container">
+          <small>© Vladyslav Berezhnyi</small>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
