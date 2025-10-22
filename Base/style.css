@@ -16,6 +16,10 @@ body {
   display: flex;
 }
 
+.link{
+  color: var(--accent);
+}
+
 .container {
   max-width: 62rem;
   margin: 0 2rem;
