@@ -229,6 +229,83 @@ textarea {
   margin-bottom: 0.3rem;  
 }
 
+.form-label-small {
+  display: inline-block;
+  margin-right: 0.5rem;
+  min-width: 40px;
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  width: auto;
+  cursor: pointer;
+}
+
+/* Checkbox */
+.checkbox-group {
+  margin: 0.5rem 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+/* Select dropdown */
+select.form-input {
+  cursor: pointer;
+}
+
+/* Date range */
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date-range input[type="date"] {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-button-secondary {
+  background: #2a2a2e !important;
+  color: var(--text) !important;
+}
+
+.form-button-secondary:hover {
+  background: #3a3a3e !important;
+}
+
 /* Styles for Ubuntu installation guide */
 .download-section {
   margin: 1rem 0;
@@ -360,5 +437,25 @@ textarea {
   
   .step-content h3 {
     font-size: 1.1rem;
+  }
+  
+  /* Form responsive */
+  .date-range {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .date-range input[type="date"] {
+    width: 100%;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .form-button, .form-button-secondary {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
