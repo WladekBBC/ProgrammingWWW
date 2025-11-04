@@ -86,7 +86,7 @@
       // Validate date from
       if (dateFrom.value) {
         if (fromDate < minDate || fromDate > maxDate) {
-          dateFrom.setCustomValidity('Data musi być między 1900-01-01 a 2100-12-31');
+          dateFrom.setCustomValidity('Data musi być między 2025 a 2100 rokiem');
         } else {
           dateFrom.setCustomValidity('');
         }
