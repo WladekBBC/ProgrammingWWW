@@ -50,7 +50,7 @@
 
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       setSidebarExpanded(false);
     }
   });
@@ -90,13 +90,11 @@
       }
 
       if (dateTo.value) {
-        if (toDate < minDate || toDate > maxDate) {
-          dateTo.setCustomValidity('Data musi być między 1900-01-01 a 2100-12-31');
-        } else if (dateFrom.value && toDate < fromDate) {
-          dateTo.setCustomValidity('Data końcowa musi być późniejsza niż data początkowa');
+        if (toDate < fromDate || toDate > maxDate || toDate < minDate) {
+          dateTo.setCustomValidity('Data musi być między 2025 a 2100 rokiem i późniejsza niż data początkowa');
         } else {
           dateTo.setCustomValidity('');
-        }
+        } 
       }
     }
     
@@ -104,7 +102,6 @@
     dateTo.addEventListener('change', validateDateRange);
   }
   
-  // Form submit validation
   form.addEventListener('submit', function(e) {
     if (!form.checkValidity()) {
       e.preventDefault();
@@ -112,6 +109,43 @@
       return false;
     }
   });
+})();
+
+(async function () {
+  const clockNode = document.getElementById('live-clock');
+  if (!clockNode) return;
+
+  const formatter = new Intl.DateTimeFormat('pl-PL', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
+
+  function updateClock() {
+    clockNode.textContent = formatter.format(new Date());
+  }
+
+  function startClock() {
+    return new Promise((resolve) => {
+      updateClock();
+      const timerId = setInterval(updateClock, 1000);
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          clearInterval(timerId);
+        } else {
+          updateClock();
+        }
+      });
+
+      resolve(timerId);
+    });
+  }
+
+  await startClock();
 })();
 
 

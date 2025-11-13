@@ -26,7 +26,6 @@ body {
   padding: 0 0.62rem;
 }
 
-/* Sidebar Styles/Nawigacja boczna */
 .sidebar {
   width: 15.6rem;
   background: var(--card);
@@ -43,7 +42,6 @@ body {
 
 .sidebar-header {
   padding: 1rem;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,7 +92,6 @@ a{
   border-left-color: var(--accent);
 }
 
-/* Main Content/ Układ informacji na stronie*/
 .main-content {
   flex: 1;
   margin-left: 15.6rem;
@@ -116,6 +113,20 @@ a{
   display: flex;
   align-items: center;
   height: 4rem;
+  gap: 1rem;
+}
+
+.live-clock {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid #25252a;
+  border-radius: 0.5rem;
+  background: rgba(18, 18, 20, 0.85);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.35);
 }
 
 .mobile-nav-toggle {
@@ -238,7 +249,6 @@ textarea {
   min-width: 40px;
 }
 
-/* Radio buttons */
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -258,7 +268,6 @@ textarea {
   cursor: pointer;
 }
 
-/* Checkbox */
 .checkbox-group {
   margin: 0.5rem 0;
 }
@@ -275,12 +284,10 @@ textarea {
   cursor: pointer;
 }
 
-/* Select dropdown */
 select.form-input {
   cursor: pointer;
 }
 
-/* Date range */
 .date-range {
   display: flex;
   align-items: center;
@@ -293,7 +300,6 @@ select.form-input {
   min-width: 150px;
 }
 
-/* Button group */
 .button-group {
   display: flex;
   gap: 1rem;
@@ -309,7 +315,6 @@ select.form-input {
   background: #3a3a3e !important;
 }
 
-/* Styles for Ubuntu installation guide */
 .download-section {
   margin: 1rem 0;
   padding: 1rem;
@@ -432,7 +437,7 @@ select.form-input {
     flex-wrap: wrap;
   }
 }
-/* Responsive adjustments for guide */
+
 @media (max-width: 48rem) {
   .download-link {
     display: block;
@@ -440,6 +445,14 @@ select.form-input {
     margin: 1rem 0;
   }
   
+  .page-title {
+    font-size: 1rem;
+  }
+
+  .live-clock {
+    font-size: 0.55rem;
+  }
+
   .code-block {
     font-size: 0.8rem;
     padding: 0.8rem;
@@ -448,8 +461,7 @@ select.form-input {
   .step-content h3 {
     font-size: 1.1rem;
   }
-  
-  /* Form responsive */
+
   .date-range {
     flex-direction: column;
     align-items: stretch;
@@ -462,7 +474,6 @@ select.form-input {
   .button-group {
     flex-direction: column;
   }
-  
   
 }
 .form-button, .form-button-secondary {
