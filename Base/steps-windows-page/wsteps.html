@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Vladyslav Berezhnyi" />
-    <link rel="icon" type="image/jpeg" href="../content/faviconOF.jpg" />
+    <link rel="icon" type="image/jpeg" href="../content/favicon.jpeg" />
     <title>Ubuntu Server Installation - Windows</title>
-    <link rel="stylesheet" href="../style.css" />
-    <script defer src="../script.js"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <script defer src="../script/script.js"></script>
   </head>
   <body>
     <aside class="sidebar" id="sidebar">
@@ -25,10 +25,18 @@
       </div>
       <nav class="sidebar-nav">
         <a href="../index.html" class="nav-link" data-nav>Strona główna</a>
-        <a href="../steps-mac-page/steps.html" class="nav-link" data-nav>Kroki macOS</a>
-        <a href="./wsteps.html" class="nav-link" data-nav aria-current="page">Kroki Windows</a>
-        <a href="../gallery-page/gallery.html" class="nav-link" data-nav>Galeria</a>
-        <a href="../resources-page/resources.html" class="nav-link" data-nav>FAQ &amp; Zasoby</a>
+        <a href="../steps-mac-page/steps.html" class="nav-link" data-nav
+          >Kroki macOS</a
+        >
+        <a href="./wsteps.html" class="nav-link" data-nav aria-current="page"
+          >Kroki Windows</a
+        >
+        <a href="../gallery-page/gallery.html" class="nav-link" data-nav
+          >Galeria</a
+        >
+        <a href="../resources-page/resources.html" class="nav-link" data-nav
+          >FAQ &amp; Zasoby</a
+        >
         <a href="../contact-us/contactUs.html" class="nav-link" data-nav
           >Strona kontaktowa</a
         >
@@ -51,54 +59,74 @@
       </header>
 
       <main class="container">
-        <!-- Sekcja wprowadzenia -->
         <section class="card">
           <h1>Instalacja Ubuntu Server na Windows</h1>
-          <p>Ten przewodnik przeprowadzi Cię przez proces instalacji Ubuntu Server 24.04 na Windows przy użyciu VirtualBox - darmowego oprogramowania do wirtualizacji.</p>
+          <p>
+            Ten przewodnik przeprowadzi Cię przez proces instalacji Ubuntu
+            Server 24.04 na Windows przy użyciu VirtualBox - darmowego
+            oprogramowania do wirtualizacji.
+          </p>
         </section>
 
-        <!-- Sekcja pobierania -->
         <section class="card">
           <h2>Pobieranie Ubuntu Server</h2>
           <p>Pobierz najnowszą wersję Ubuntu Server:</p>
           <div class="download-section">
-            <a href="https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso" 
-               class="download-link" 
-               target="_blank" 
-               rel="noopener noreferrer">
-               Ubuntu 24.04 Live Server AMD64 ISO
+            <a
+              href="https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso"
+              class="download-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ubuntu 24.04 Live Server AMD64 ISO
             </a>
             <p class="download-info">Rozmiar: ~2.9 GB | Format: ISO</p>
           </div>
         </section>
 
-        <!-- Wymagania systemowe -->
         <section class="card">
           <h2>Wymagania systemowe</h2>
           <div class="requirements">
             <h3>Minimalne wymagania:</h3>
             <ul>
-              <li><strong>System operacyjny:</strong> Windows 10/11 (64-bit)</li>
-              <li><strong>Procesor:</strong> Intel/AMD 64-bit z obsługą wirtualizacji (VT-x/AMD-V)</li>
+              <li>
+                <strong>System operacyjny:</strong> Windows 10/11 (64-bit)
+              </li>
+              <li>
+                <strong>Procesor:</strong> Intel/AMD 64-bit z obsługą
+                wirtualizacji (VT-x/AMD-V)
+              </li>
               <li><strong>RAM:</strong> Minimum 4 GB (zalecane 8 GB)</li>
-              <li><strong>Miejsce na dysku:</strong> Minimum 25 GB wolnego miejsca</li>
-              <li><strong>Połączenie internetowe:</strong> Do pobierania aktualizacji</li>
+              <li>
+                <strong>Miejsce na dysku:</strong> Minimum 25 GB wolnego miejsca
+              </li>
+              <li>
+                <strong>Połączenie internetowe:</strong> Do pobierania
+                aktualizacji
+              </li>
             </ul>
-            
+
             <h3>Potrzebne oprogramowanie:</h3>
             <ul>
-              <li><strong>VirtualBox:</strong> Darmowa aplikacja do wirtualizacji</li>
-              <li><strong>Kodery wideo:</strong> Opcjonalnie dla lepszej wydajności</li>
+              <li>
+                <strong>VirtualBox:</strong> Darmowa aplikacja do wirtualizacji
+              </li>
+              <li>
+                <strong>Kodery wideo:</strong> Opcjonalnie dla lepszej
+                wydajności
+              </li>
             </ul>
           </div>
         </section>
 
-        <!-- Instalacja VirtualBox -->
         <section class="card">
           <h2>Instalacja VirtualBox</h2>
           <div class="step-content">
             <h3>Krok 1: Pobierz VirtualBox</h3>
-            <p>VirtualBox to darmowe oprogramowanie Oracle do uruchamiania maszyn wirtualnych:</p>
+            <p>
+              VirtualBox to darmowe oprogramowanie Oracle do uruchamiania maszyn
+              wirtualnych:
+            </p>
             <ol>
               <li>Przejdź na oficjalną stronę VirtualBox</li>
               <li>Pobierz wersję dla Windows</li>
@@ -106,21 +134,29 @@
             </ol>
           </div>
           <div class="download-section">
-            <a href="https://www.virtualbox.org/wiki/Downloads"
-            class="download-link"
-            target="_blank"
-            rel="noopener noreferrer">VirtualBox Windows</a>
+            <a
+              href="https://www.virtualbox.org/wiki/Downloads"
+              class="download-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >VirtualBox Windows</a
+            >
             <p class="download-info">Rozmiar: ~120 MB | Format: EXE</p>
           </div>
-          
+          <img src="../content/virtualbox.png" alt="virtualbox" />
           <div class="step-content">
             <h3>Krok 2: Instalacja VirtualBox</h3>
             <ol>
-              <li>Uruchom pobrany plik <code>VirtualBox-x.x.x-xxx.exe</code></li>
+              <li>
+                Uruchom pobrany plik <code>VirtualBox-x.x.x-xxx.exe</code>
+              </li>
               <li>Kliknij "Next" i postępuj zgodnie z instrukcjami</li>
               <li>Zaakceptuj domyślne ustawienia</li>
               <li>Włącz opcję <strong>"Install VirtualBox"</strong></li>
-              <li>Podczas instalacji może pojawić się ostrzeżenie o sterownikach - kliknij "Install"</li>
+              <li>
+                Podczas instalacji może pojawić się ostrzeżenie o sterownikach -
+                kliknij "Install"
+              </li>
               <li>Po zakończeniu kliknij "Finish"</li>
             </ol>
           </div>
@@ -144,19 +180,32 @@
             <ul>
               <li><strong>Minimum:</strong> 2048 MB (2 GB)</li>
               <li><strong>Zalecane:</strong> 4096 MB (4 GB) lub więcej</li>
-              <li><strong>Maksimum:</strong> Nie więcej niż połowa dostępnej RAM</li>
+              <li>
+                <strong>Maksimum:</strong> Nie więcej niż połowa dostępnej RAM
+              </li>
             </ul>
-            <p>Przeciągnij suwak do pożądanej wartości i kliknij <strong>"Next"</strong></p>
+            <p>
+              Przeciągnij suwak do pożądanej wartości i kliknij
+              <strong>"Next"</strong>
+            </p>
 
             <h3>Krok 5: Utworzenie dysku wirtualnego</h3>
             <ol>
               <li>Wybierz <strong>"Create a virtual hard disk now"</strong></li>
               <li>Kliknij <strong>"Create"</strong></li>
-              <li>Wybierz typ: <strong>VDI (VirtualBox Disk Image)</strong> - domyślny</li>
+              <li>
+                Wybierz typ: <strong>VDI (VirtualBox Disk Image)</strong> -
+                domyślny
+              </li>
               <li>Kliknij <strong>"Next"</strong></li>
-              <li>Wybierz: <strong>"Dynamically allocated"</strong> (Zalecane)</li>
+              <li>
+                Wybierz: <strong>"Dynamically allocated"</strong> (Zalecane)
+              </li>
               <li>Kliknij <strong>"Next"</strong></li>
-              <li>Ustaw rozmiar: Minimum <strong>25 GB</strong>, zalecane <strong>40 GB</strong></li>
+              <li>
+                Ustaw rozmiar: Minimum <strong>25 GB</strong>, zalecane
+                <strong>40 GB</strong>
+              </li>
               <li>Kliknij <strong>"Create"</strong></li>
             </ol>
           </div>
@@ -168,12 +217,20 @@
           <div class="step-content">
             <h3>Krok 6: Konfiguracja ustawień</h3>
             <ol>
-              <li>Wybierz utworzoną maszynę i kliknij <strong>"Settings"</strong> (Ustawienia)</li>
+              <li>
+                Wybierz utworzoną maszynę i kliknij
+                <strong>"Settings"</strong> (Ustawienia)
+              </li>
               <li>Przejdź do zakładki <strong>"System"</strong></li>
-              <li>W sekcji "Motherboard" sprawdź kolejność bootowania (CD powinno być pierwsze)</li>
+              <li>
+                W sekcji "Motherboard" sprawdź kolejność bootowania (CD powinno
+                być pierwsze)
+              </li>
               <li>Przejdź do zakładki <strong>"Storage"</strong></li>
               <li>Kliknij na "Empty" pod "Controller: IDE"</li>
-              <li>W sekcji "Attributes" kliknij ikonę dysku obok "Optical Drive"</li>
+              <li>
+                W sekcji "Attributes" kliknij ikonę dysku obok "Optical Drive"
+              </li>
               <li>Wybierz <strong>"Choose a disk file"</strong></li>
               <li>Przejdź do folderu z pobranym ISO i wybierz plik</li>
               <li>Kliknij <strong>"OK"</strong></li>
@@ -192,9 +249,13 @@
             <h3>Krok 8: Uruchomienie instalatora</h3>
             <ol>
               <li>Wybierz maszynę wirtualną</li>
-              <li>Kliknij przycisk <strong>"Start"</strong> (Zielona strzałka)</li>
+              <li>
+                Kliknij przycisk <strong>"Start"</strong> (Zielona strzałka)
+              </li>
               <li>Ubuntu Server Live CD powinien się uruchomić</li>
-              <li>Wybierz język i opcję <strong>"Install Ubuntu Server"</strong></li>
+              <li>
+                Wybierz język i opcję <strong>"Install Ubuntu Server"</strong>
+              </li>
             </ol>
 
             <h3>Krok 9: Proces instalacji</h3>
@@ -202,7 +263,10 @@
               <li><strong>Wybierz język:</strong> Polski lub English</li>
               <li><strong>Wybierz układ klawiatury:</strong> Polish lub US</li>
               <li><strong>Wybierz instalację:</strong> Normal installation</li>
-              <li><strong>Konfiguracja sieci:</strong> Wybierz "enp0s3" lub podobne</li>
+              <li>
+                <strong>Konfiguracja sieci:</strong> Wybierz "enp0s3" lub
+                podobne
+              </li>
               <li><strong>Proxy:</strong> Zostaw puste (jeśli nie używasz)</li>
               <li><strong>Mirror:</strong> Wybierz domyślne lub najbliższe</li>
             </ol>
@@ -212,7 +276,9 @@
               <li>Wybierz <strong>"Use an entire disk"</strong></li>
               <li>Wybierz swój wirtualny dysk (zazwyczaj jedyny dostępny)</li>
               <li>Wybierz <strong>"Done"</strong> i potwierdź "Continue"</li>
-              <li><strong>LVM:</strong> Opcjonalnie włącz dla zaawansowanych</li>
+              <li>
+                <strong>LVM:</strong> Opcjonalnie włącz dla zaawansowanych
+              </li>
             </ul>
 
             <h3>Krok 11: Konfiguracja użytkownika</h3>
@@ -240,7 +306,10 @@
             <ol>
               <li>Wybierz <strong>"Reboot Now"</strong></li>
               <li>Poczekaj na ponowne uruchomienie</li>
-              <li>Po uruchomieniu możesz dostać komunikat o błędzie dotyczącym maszyny wirtualnej</li>
+              <li>
+                Po uruchomieniu możesz dostać komunikat o błędzie dotyczącym
+                maszyny wirtualnej
+              </li>
               <li>Zamknij maszynę wirtualną</li>
               <li>W VirtualBox: Settings → Storage</li>
               <li>Kliknij na ikonę dysku obok "Controller: IDE"</li>
@@ -252,8 +321,14 @@
             <ol>
               <li>Uruchom ponownie maszynę wirtualną</li>
               <li>Zaloguj się używając utworzonego konta</li>
-              <li>Sprawdź połączenie internetowe: <code>ping -c 4 google.com</code></li>
-              <li>Zaktualizuj system: <code>sudo apt update && sudo apt upgrade -y</code></li>
+              <li>
+                Sprawdź połączenie internetowe:
+                <code>ping -c 4 google.com</code>
+              </li>
+              <li>
+                Zaktualizuj system:
+                <code>sudo apt update && sudo apt upgrade -y</code>
+              </li>
             </ol>
           </div>
         </section>
@@ -264,20 +339,23 @@
           <div class="step-content">
             <h3>Podstawowe komendy:</h3>
             <div class="code-block">
-              <code>sudo apt update</code> - Aktualizacja listy pakietów<br>
-              <code>sudo apt upgrade</code> - Aktualizacja systemu<br>
-              <code>sudo apt install htop</code> - Instalacja monitora systemu<br>
-              <code>sudo apt install nano</code> - Instalacja edytora tekstu<br>
-              <code>sudo apt install curl wget</code> - Narzędzia do pobierania<br>
-              <code>sudo systemctl status ssh</code> - Status serwera SSH<br>
-              <code>ip addr show</code> - Sprawdzenie adresu IP<br>
+              <code>sudo apt update</code> - Aktualizacja listy pakietów<br />
+              <code>sudo apt upgrade</code> - Aktualizacja systemu<br />
+              <code>sudo apt install htop</code> - Instalacja monitora
+              systemu<br />
+              <code>sudo apt install nano</code> - Instalacja edytora tekstu<br />
+              <code>sudo apt install curl wget</code> - Narzędzia do
+              pobierania<br />
+              <code>sudo systemctl status ssh</code> - Status serwera SSH<br />
+              <code>ip addr show</code> - Sprawdzenie adresu IP<br />
               <code>df -h</code> - Sprawdzenie miejsca na dysku
             </div>
 
             <h3>Konfiguracja SSH:</h3>
             <div class="code-block">
-              <code>sudo systemctl enable ssh</code> - Włączenie SSH przy starcie<br>
-              <code>sudo systemctl start ssh</code> - Uruchomienie SSH<br>
+              <code>sudo systemctl enable ssh</code> - Włączenie SSH przy
+              starcie<br />
+              <code>sudo systemctl start ssh</code> - Uruchomienie SSH<br />
               <code>sudo ufw allow ssh</code> - Zezwolenie na SSH w firewall
             </div>
           </div>
@@ -288,20 +366,29 @@
           <h2>Rozwiązywanie problemów</h2>
           <div class="step-content">
             <h3>Typowe problemy:</h3>
-            
-            <h4>Problem: VirtualBox pokazuje błąd "VT-x/AMD-V is not available"</h4>
+
+            <h4>
+              Problem: VirtualBox pokazuje błąd "VT-x/AMD-V is not available"
+            </h4>
             <ul>
               <li>Sprawdź czy wirtualizacja jest włączona w BIOS/UEFI</li>
               <li>Restartuj komputer i wejdź do BIOS (zwykle F2, F10, Del)</li>
-              <li>Włącz opcje "Virtualization Technology", "VT-x" lub "AMD-V"</li>
-              <li>Wyłącz Hyper-V w Windows: <code>dism.exe /Online /Disable-Feature:Microsoft-Hyper-V</code></li>
+              <li>
+                Włącz opcje "Virtualization Technology", "VT-x" lub "AMD-V"
+              </li>
+              <li>
+                Wyłącz Hyper-V w Windows:
+                <code>dism.exe /Online /Disable-Feature:Microsoft-Hyper-V</code>
+              </li>
             </ul>
 
             <h4>Problem: Wolna wydajność maszyny wirtualnej</h4>
             <ul>
               <li>Zwiększ przydział RAM (minimum 4 GB)</li>
               <li>Zwiększ liczbę procesorów w ustawieniach</li>
-              <li>Zainstaluj Guest Additions: Devices → Insert Guest Additions CD</li>
+              <li>
+                Zainstaluj Guest Additions: Devices → Insert Guest Additions CD
+              </li>
               <li>Włącz akcelerację 3D w ustawieniach wyświetlania</li>
               <li>Zamknij niepotrzebne aplikacje na Windows</li>
             </ul>
@@ -325,15 +412,23 @@
 
             <h4>Problem: Nie można zalogować się przez SSH</h4>
             <ul>
-              <li>Sprawdź czy SSH jest zainstalowany: <code>sudo systemctl status ssh</code></li>
+              <li>
+                Sprawdź czy SSH jest zainstalowany:
+                <code>sudo systemctl status ssh</code>
+              </li>
               <li>Sprawdź adres IP: <code>ip addr show</code></li>
               <li>Sprawdź firewall: <code>sudo ufw status</code></li>
-              <li>Włącz port forwarding w VirtualBox: Settings → Network → Advanced → Port Forwarding</li>
+              <li>
+                Włącz port forwarding w VirtualBox: Settings → Network →
+                Advanced → Port Forwarding
+              </li>
             </ul>
 
             <h4>Problem: Klawiatura nie działa poprawnie</h4>
             <ul>
-              <li>Kliknij w okno maszyny wirtualnej aby zsynchronizować klawiaturę</li>
+              <li>
+                Kliknij w okno maszyny wirtualnej aby zsynchronizować klawiaturę
+              </li>
               <li>Sprawdź ustawienia klawiatury w VirtualBox</li>
               <li>Użyj kombinacji Ctrl+Alt aby "odkleić" mysz z VM</li>
             </ul>
@@ -346,17 +441,45 @@
           <div class="step-content">
             <h3>Przydatne linki:</h3>
             <ul>
-              <li><a href="https://ubuntu.com/server" target="_blank">Oficjalna strona Ubuntu Server</a></li>
-              <li><a href="https://www.virtualbox.org/" target="_blank">Strona VirtualBox</a></li>
-              <li><a href="https://help.ubuntu.com/" target="_blank">Dokumentacja Ubuntu</a></li>
-              <li><a href="https://ubuntu.com/tutorials" target="_blank">Samouczki Ubuntu</a></li>
+              <li>
+                <a href="https://ubuntu.com/server" target="_blank"
+                  >Oficjalna strona Ubuntu Server</a
+                >
+              </li>
+              <li>
+                <a href="https://www.virtualbox.org/" target="_blank"
+                  >Strona VirtualBox</a
+                >
+              </li>
+              <li>
+                <a href="https://help.ubuntu.com/" target="_blank"
+                  >Dokumentacja Ubuntu</a
+                >
+              </li>
+              <li>
+                <a href="https://ubuntu.com/tutorials" target="_blank"
+                  >Samouczki Ubuntu</a
+                >
+              </li>
             </ul>
 
             <h3>Dokumentacja:</h3>
             <ul>
-              <li><a href="https://ubuntu.com/server/docs" target="_blank">Dokumentacja Ubuntu Server</a></li>
-              <li><a href="https://www.virtualbox.org/manual/" target="_blank">Manual VirtualBox</a></li>
-              <li><a href="https://help.ubuntu.com/community" target="_blank">Społeczność Ubuntu</a></li>
+              <li>
+                <a href="https://ubuntu.com/server/docs" target="_blank"
+                  >Dokumentacja Ubuntu Server</a
+                >
+              </li>
+              <li>
+                <a href="https://www.virtualbox.org/manual/" target="_blank"
+                  >Manual VirtualBox</a
+                >
+              </li>
+              <li>
+                <a href="https://help.ubuntu.com/community" target="_blank"
+                  >Społeczność Ubuntu</a
+                >
+              </li>
             </ul>
           </div>
         </section>

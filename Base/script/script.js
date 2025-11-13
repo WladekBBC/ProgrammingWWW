@@ -16,7 +16,6 @@
     }
   }
 
-  // Mobile toggle functionality
   if (mobileToggle) {
     mobileToggle.addEventListener('click', function () {
       var isOpen = sidebar.classList.contains('open');
@@ -24,14 +23,12 @@
     });
   }
 
-  // Sidebar close button functionality
   if (sidebarToggle) {
     sidebarToggle.addEventListener('click', function () {
       setSidebarExpanded(false);
     });
   }
 
-  // Close sidebar on link click (mobile UX)
   var navLinks = sidebar.querySelectorAll('[data-nav]');
   navLinks.forEach(function(link) {
     link.addEventListener('click', function () {
@@ -39,7 +36,7 @@
     });
   });
 
-  // Close sidebar when clicking outside on mobile
+
   document.addEventListener('click', function (e) {
     if (window.innerWidth <= 768) {
       var isClickInsideSidebar = sidebar.contains(e.target);
@@ -51,7 +48,7 @@
     }
   });
 
-  // Handle window resize
+
   window.addEventListener('resize', function () {
     if (window.innerWidth > 768) {
       setSidebarExpanded(false);
@@ -59,17 +56,17 @@
   });
 })();
 
-// Form validation
+
 (function() {
   var form = document.forms['fm'];
   if (!form) return;
   
-  // Date range validation
+
   var dateFrom = document.getElementById('date-from');
   var dateTo = document.getElementById('date-to');
   
   if (dateFrom && dateTo) {
-    // Set min and max dates
+
     var today = new Date();
     var minDate = new Date(2025, 10, 1);
     var maxDate = new Date(2100, 11, 31);
@@ -83,7 +80,7 @@
       var fromDate = new Date(dateFrom.value);
       var toDate = new Date(dateTo.value);
       
-      // Validate date from
+
       if (dateFrom.value) {
         if (fromDate < minDate || fromDate > maxDate) {
           dateFrom.setCustomValidity('Data musi być między 2025 a 2100 rokiem');
@@ -91,8 +88,7 @@
           dateFrom.setCustomValidity('');
         }
       }
-      
-      // Validate date to
+
       if (dateTo.value) {
         if (toDate < minDate || toDate > maxDate) {
           dateTo.setCustomValidity('Data musi być między 1900-01-01 a 2100-12-31');

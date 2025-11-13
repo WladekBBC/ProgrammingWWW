@@ -424,7 +424,14 @@ select.form-input {
 .step-content a:hover {
   text-decoration: underline;
 }
-
+@media(max-width: 35.6rem) {
+  .gallery-image {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 /* Responsive adjustments for guide */
 @media (max-width: 48rem) {
   .download-link {
@@ -465,10 +472,14 @@ select.form-input {
 }
 
 .gallery-image {
-  display: inline-block;
-  flex-wrap: wrap;
+  
   width: 14rem;
-  height: 10rem;
+  height: 13rem;
   border-radius: 0.5rem;
   margin: auto;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
 }
