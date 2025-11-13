@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Najczęstsze pytania i dodatkowe zasoby dotyczące Ubuntu Server"
+    />
+    <meta name="author" content="Vladyslav Berezhnyi" />
+    <link rel="icon" type="image/jpeg" href="" />
+    <title>FAQ &amp; Zasoby</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="../index.html">Home</a>
+        <button
+          class="sidebar-toggle"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Toggle sidebar"
+        >
+          ✕
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link" data-nav>Strona główna</a>
+        <a href="../steps-mac-page/steps.html" class="nav-link" data-nav
+          >Kroki macOS</a
+        >
+        <a href="../steps-windows-page/wsteps.html" class="nav-link" data-nav
+          >Kroki Windows</a
+        >
+        <a href="../gallery-page/gallery.html" class="nav-link" data-nav
+          >Galeria</a
+        >
+        <a href="./resources.html" class="nav-link" data-nav aria-current="page"
+          >FAQ &amp; Zasoby</a
+        >
+        <a href="../contact-us/contactUs.html" class="nav-link" data-nav
+          >Strona kontaktowa</a
+        >
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="site-header">
+        <div class="container header-inner">
+          <button
+            class="mobile-nav-toggle"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            aria-label="Toggle navigation"
+          >
+            ☰
+          </button>
+          <h1 class="page-title">FAQ &amp; Zasoby</h1>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="card">
+          <h1>Najczęstsze pytania</h1>
+          <p>
+            Znajdziesz tutaj odpowiedzi na popularne pytania dotyczące
+            instalacji i utrzymania Ubuntu Server, a także przydatne linki do
+            dalszej nauki.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>FAQ – szybkie odpowiedzi</h2>
+          <details class="faq-item">
+            <summary>Jak często aktualizować system po instalacji?</summary>
+            <p>
+              Warto uruchamiać
+              <code>sudo apt update && sudo apt upgrade</code> przynajmniej raz
+              w tygodniu, aby utrzymać serwer w najnowszej i bezpiecznej wersji.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Jak monitorować podstawowe parametry serwera?</summary>
+            <p>
+              Zainstaluj pakiet <code>htop</code> lub używaj wbudowanego
+              polecenia <code>top</code>. Dla logów systemowych korzystaj z
+              <code>journalctl</code> oraz plików w <code>/var/log</code>.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Czy mogę zdalnie zarządzać serwerem?</summary>
+            <p>
+              Tak, skonfiguruj SSH i korzystaj z kluczy publicznych dla
+              bezpiecznego logowania. Rozważ też ustawienie <code>ufw</code> aby
+              ograniczyć dostęp do portów.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>Jak szybko rozwiązać problem z siecią?</summary>
+            <p>
+              Sprawdź status usług poleceniem
+              <code>systemctl status NetworkManager</code>, upewnij się że Twój
+              interfejs ma adres IP (<code>ip addr</code>) i zweryfikuj DNS
+              korzystając z <code>resolvectl status</code>.
+            </p>
+          </details>
+        </section>
+
+        <section class="card">
+          <h2>Checklist – po instalacji</h2>
+          <ol class="checklist">
+            <li>
+              Zmień domyślne hasła i utwórz użytkowników z ograniczonymi
+              uprawnieniami.
+            </li>
+            <li>
+              Włącz zaporę sieciową (<code>sudo ufw enable</code>) i otwórz
+              tylko wymagane porty.
+            </li>
+            <li>
+              Skonfiguruj automatyczne kopie zapasowe katalogów krytycznych.
+            </li>
+            <li>
+              Monitoruj wykorzystanie zasobów za pomocą narzędzi takich jak
+              <code>netdata</code>, <code>glances</code> lub Prometheus.
+            </li>
+            <li>
+              Dokumentuj zmiany i konfigurację, aby ułatwić przyszłe audyty.
+            </li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h2>Dalsza nauka i inspiracje</h2>
+          <div class="step-content">
+            <h3>Przewodniki i dokumentacja:</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://ubuntu.com/server/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ubuntu Server Docs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ubuntuforums.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ubuntu Forums</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://wiki.archlinux.org/title/Category:Server"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Arch Wiki – kategoria Server</a
+                >
+              </li>
+            </ul>
+
+            <h3>Automatyzacja i konfiguracja:</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://docs.ansible.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ansible Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.terraform.io/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Terraform Docs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://cloud-init.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cloud-init</a
+                >
+              </li>
+            </ul>
+
+            <h3>Bezpieczeństwo:</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://ubuntu.com/security"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ubuntu Security Notices</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://owasp.org/www-project-top-ten/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >OWASP Top 10</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.cyber.gov.au/resources-business-and-government/essentials"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Essential Eight (Cyber.gov)</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <small>© Vladyslav Berezhnyi</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

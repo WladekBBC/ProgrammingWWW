@@ -67,6 +67,9 @@ body {
   cursor: pointer;
 }
 
+a{
+  text-decoration: none;
+}
 .sidebar-nav {
   flex: 1;
   padding: 1rem 0;
@@ -453,17 +456,19 @@ select.form-input {
     flex-direction: column;
   }
   
-  .form-button, .form-button-secondary {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  
+}
+.form-button, .form-button-secondary {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .gallery-image {
-  display: flex;
-  flex_wrap: wrap;
-  width: 100%;
-  height: auto;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 14rem;
+  height: 10rem;
   border-radius: 0.5rem;
+  margin: auto;
 }
