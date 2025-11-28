@@ -111,42 +111,42 @@
 
   // Отримуємо поля дат / Get date fields
   var dateFrom = document.getElementById('date-from');  /* Дата початку / Start date */
-  var dateTo = document.getElementById('date-to');      /* Дата кінця / End date */
-  
-  if (dateFrom && dateTo) {
-    // Встановлюємо мінімальну та максимальну дати / Set minimum and maximum dates
-    var today = new Date();
-    var minDate = new Date(2025, 10, 1);      /* Мінімальна дата: 1 листопада 2025 / Min date: Nov 1, 2025 */
-    var maxDate = new Date(2100, 11, 31);     /* Максимальна дата: 31 грудня 2100 / Max date: Dec 31, 2100 */
+    var dateTo = document.getElementById('date-to');      /* Дата кінця / End date */
     
-    // Встановлюємо обмеження для полів дат / Set constraints for date fields
-    dateFrom.setAttribute('min', minDate.toISOString().split('T')[0]);
-    dateFrom.setAttribute('max', maxDate.toISOString().split('T')[0]);
-    dateTo.setAttribute('min', minDate.toISOString().split('T')[0]);
-    dateTo.setAttribute('max', maxDate.toISOString().split('T')[0]);
-    
-    /* ============================================
-       Функція валідації діапазону дат
-       Date range validation function
-       ============================================ */
-    function validateDateRange() {
-      var fromDate = new Date(dateFrom.value);
-      var toDate = new Date(dateTo.value);
+    if (dateFrom && dateTo) {
+      // Встановлюємо мінімальну та максимальну дати / Set minimum and maximum dates
+      var today = new Date();
+      var minDate = new Date(2025, 10, 1);      /* Мінімальна дата: 1 листопада 2025 / Min date: Nov 1, 2025 */
+      var maxDate = new Date(2100, 11, 31);     /* Максимальна дата: 31 грудня 2100 / Max date: Dec 31, 2100 */
       
+      // Встановлюємо обмеження для полів дат / Set constraints for date fields
+      dateFrom.setAttribute('min', minDate.toISOString().split('T')[0]);
+      dateFrom.setAttribute('max', maxDate.toISOString().split('T')[0]);
+      dateTo.setAttribute('min', minDate.toISOString().split('T')[0]);
+      dateTo.setAttribute('max', maxDate.toISOString().split('T')[0]);
+      
+      /* ============================================
+        Функція валідації діапазону дат
+        Date range validation function
+        ============================================ */
+      function validateDateRange() {
+        var fromDate = new Date(dateFrom.value);
+        var toDate = new Date(dateTo.value);
+        
 
-      // Валідація дати початку / Start date validation
-      if (dateFrom.value) {
-        if (fromDate < minDate || fromDate > maxDate) {
-          dateFrom.setCustomValidity('Data musi być między 2025 a 2100 rokiem');
-        } else {
-          dateFrom.setCustomValidity('');
+        // Валідація дати початку / Start date validation
+        if (dateFrom.value) {
+          if (fromDate < minDate || fromDate > maxDate) {
+            dateFrom.setCustomValidity('Data musi być między 2025 a 2100 rokiem');
+          } else {
+            dateFrom.setCustomValidity('');
+          }
         }
-      }
 
-      // Валідація дати кінця / End date validation
-      if (dateTo.value) {
-        // Перевіряємо, що дата кінця пізніша за дату початку / Check that end date is after start date
-        if (toDate < fromDate || toDate > maxDate || toDate < minDate) {
+        // Валідація дати кінця / End date validation
+        if (dateTo.value) {
+          // Перевіряємо, що дата кінця пізніша за дату початку / Check that end date is after start date
+          if (toDate < fromDate || toDate > maxDate || toDate < minDate) {
           dateTo.setCustomValidity('Data musi być między 2025 a 2100 rokiem i późniejsza niż data początkowa');
         } else {
           dateTo.setCustomValidity('');
