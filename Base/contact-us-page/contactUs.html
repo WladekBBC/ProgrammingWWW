@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prosty szkielet MPA – podstrona" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/jpeg" href="../content/favicon.jpeg" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <script defer src="../script/script.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="../index.html">Home</a>
+        <button
+          class="sidebar-toggle"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Toggle sidebar"
+        >
+          ✕
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="../index.html" class="nav-link" data-nav>Strona główna</a>
+        <a href="../steps-mac-page/steps.html" class="nav-link" data-nav
+          >Kroki macOS</a
+        >
+        <a href="../steps-windows-page/wsteps.html" class="nav-link" data-nav
+          >Kroki Windows</a
+        >
+        <a href="../gallery-page/gallery.html" class="nav-link" data-nav
+          >Galeria</a
+        >
+        <a href="../resources-page/resources.html" class="nav-link" data-nav
+          >FAQ &amp; Zasoby</a
+        >
+        <a href="./contactUs.html" class="nav-link" data-nav aria-current="page"
+          >Strona kontaktowa</a
+        >
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="site-header">
+        <div class="container header-inner">
+          <button
+            class="mobile-nav-toggle"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            aria-label="Toggle navigation"
+          >
+            ☰
+          </button>
+          <h1 class="page-title">Contact Us</h1>
+          <div class="live-clock" id="live-clock" aria-live="polite"></div>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="card">
+          <h2>Strona kontaktowa</h2>
+          <form
+            action="https://webdevbasics.net/scripts/demo.php"
+            method="post"
+            name="fm"
+          >
+            <fieldset class="form-fieldset" id="fm">
+              <legend>Formularz kontaktowy</legend>
+
+              <label for="name" class="form-label">Imię</label>
+              <input
+                type="text"
+                class="form-input"
+                id="name"
+                name="name"
+                placeholder="Jan"
+                pattern="[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż\s]{2,50}"
+                required
+              /><br />
+
+              <label for="surname" class="form-label">Nazwisko</label>
+              <input
+                type="text"
+                class="form-input"
+                id="surname"
+                name="surname"
+                placeholder="Kowalski"
+                pattern="[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż\s]{2,50}"
+                required
+              /><br />
+
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-input"
+                id="email"
+                name="email"
+                placeholder="jan.kowalski@uwm.edu.pl"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}"
+                required
+              />
+              <br />
+
+              <label for="phone" class="form-label">Telefon</label>
+              <input
+                type="tel"
+                class="form-input"
+                id="phone"
+                name="phone"
+                placeholder="123456789"
+                pattern="[0-9]{9}"
+                required
+              />
+              <br />
+
+              <label class="form-label">Temat zapytania:</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="topic"
+                    value="instalacja"
+                    required
+                  />
+                  Instalacja Ubuntu
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="topic" value="problem" required />
+                  Problem techniczny
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="topic" value="inne" required />
+                  Inne
+                </label>
+              </div>
+              <br />
+
+              <label for="priority" class="form-label">Priorytet:</label>
+              <select id="priority" name="priority" class="form-input" required>
+                <option value="">-- Wybierz priorytet --</option>
+                <option value="niski">Niski</option>
+                <option value="sredni">Średni</option>
+                <option value="wysoki">Wysoki</option>
+                <option value="pilny">Pilny</option>
+              </select>
+              <br />
+
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter" value="yes" />
+                  Chcę otrzymywać newsletter z aktualizacjami
+                </label>
+              </div>
+              <br />
+
+              <label class="form-label">Termin odpowiedzi:</label>
+              <div class="date-range">
+                <label for="date-from" class="form-label-small">Od:</label>
+                <input
+                  type="date"
+                  class="form-input"
+                  id="date-from"
+                  name="date-from"
+                  required
+                />
+                <label for="date-to" class="form-label-small">Do:</label>
+                <input
+                  type="date"
+                  class="form-input"
+                  id="date-to"
+                  name="date-to"
+                  required
+                />
+              </div>
+              <br />
+
+              <label for="message" class="form-label">Wiadomość</label>
+              <textarea
+                class="form-input"
+                id="message"
+                name="message"
+                placeholder="Opisz dokładnie swoje pytanie lub problem..."
+                rows="5"
+                minlength="10"
+                maxlength="500"
+                required
+              ></textarea>
+              <br />
+
+              <div class="button-group">
+                <button class="form-button" type="submit">Wyślij</button>
+                <button class="form-button form-button-secondary" type="reset">
+                  Anuluj
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <small>© Vladyslav Berezhnyi</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

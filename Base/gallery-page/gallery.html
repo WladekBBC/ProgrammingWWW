@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Vladyslav Berezhnyi" />
-    <link rel="icon" type="image/jpeg" href="../content/faviconOF.jpg" />
+    <link rel="icon" type="image/jpeg" href="../content/favicon.jpeg" />
     <title>Gallery Page</title>
-    <link rel="stylesheet" href="../style.css" />
-    <script defer src="../script.js"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <script defer src="../script/script.js"></script>
   </head>
   <body>
     <aside class="sidebar" id="sidebar">
@@ -25,11 +25,19 @@
       </div>
       <nav class="sidebar-nav">
         <a href="../index.html" class="nav-link" data-nav>Strona główna</a>
-        <a href="../steps-page/steps.html" class="nav-link" data-nav>Kroki</a>
+        <a href="../steps-mac-page/steps.html" class="nav-link" data-nav
+          >Kroki macOS</a
+        >
+        <a href="../steps-windows-page/wsteps.html" class="nav-link" data-nav
+          >Kroki Windows</a
+        >
         <a href="./gallery.html" class="nav-link" data-nav aria-current="page"
           >Galeria</a
         >
-        <a href="../contact-us/contactUs.html" class="nav-link" data-nav
+        <a href="../resources-page/resources.html" class="nav-link" data-nav
+          >FAQ &amp; Zasoby</a
+        >
+        <a href="../contact-us-page/contactUs.html" class="nav-link" data-nav
           >Strona kontaktowa</a
         >
       </nav>
@@ -47,13 +55,57 @@
             ☰
           </button>
           <h1 class="page-title">Gallery</h1>
+          <div class="live-clock" id="live-clock" aria-live="polite"></div>
         </div>
       </header>
 
       <main class="container">
-      <section class="card">
-        <h1>Galeria</h1>
-      </section>
+        <section class="card">
+          <h2>Galeria</h2>
+        </section>
+        <section class="card">
+          <h2>Przykłady funkcjonalności maszyn wirtualnych</h2>
+          <img
+            class="gallery-image"
+            src="../content/DHCP.png"
+            alt="Ubuntu Server ARM64 na macOS DHCP"
+          />
+          <img
+            class="gallery-image"
+            src="../content/dns.png"
+            alt="Ubuntu Server ARM64 na macOS DNS"
+          />
+          <img
+            class="gallery-image"
+            src="../content/ssh.png"
+            alt="Ubuntu Server ARM64 na macOS SSH"
+          />
+          <img
+            class="gallery-image"
+            src="../content/apache2.png"
+            alt="Ubuntu Server ARM64 na macOS Apache2"
+          />
+          <img
+            class="gallery-image"
+            src="../content/htop.png"
+            alt="htop example"
+          />
+          <img
+            class="gallery-image"
+            src="../content/firewall.png"
+            alt="firewall example"
+          />
+          <img
+            class="gallery-image"
+            src="../content/dockerpull.png"
+            alt="docker example"
+          />
+          <img
+            src="../content/vim.png"
+            alt="vim example"
+            class="gallery-image"
+          />
+        </section>
       </main>
 
       <footer class="site-footer">
