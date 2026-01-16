@@ -2,11 +2,14 @@
 require_once __DIR__ . '/db.php';
 
 /**
+ * Migration:
+ * ALTER TABLE users ADD COLUMN role VARCHAR(50) DEFAULT 'user';
  *
  * CREATE TABLE users (
  *   id INT AUTO_INCREMENT PRIMARY KEY,
  *   email VARCHAR(255) UNIQUE NOT NULL,
  *   password_hash VARCHAR(255) NOT NULL,
+ *   role VARCHAR(50) DEFAULT 'user',
  *   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
  * ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
  */
@@ -64,7 +67,7 @@ function auth_login(string $email, string $password, bool $remember, ?string &$e
     $error = null;
 
     $pdo = get_pdo();
-    $stmt = $pdo->prepare('SELECT id, email, password_hash FROM users WHERE email = :email');
+    $stmt = $pdo->prepare('SELECT id, email, password_hash, role FROM users WHERE email = :email');
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
 
@@ -76,7 +79,7 @@ function auth_login(string $email, string $password, bool $remember, ?string &$e
     // Logowanie OK – ustaw sesję
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_email'] = $user['email'];
-
+    $_SESSION['user_role'] = $user['role'] ?? 'user';    $_SESSION['page_visits_count'] = 0; // Resetuj licznik przy logowaniu
     // Ciasteczko „remember me” – zachowawczo tylko e-mail (do wstępnego wypełnienia formularza)
     if ($remember) {
         setcookie('remember_email', $user['email'], time() + 60 * 60 * 24 * 30, '/');
@@ -108,6 +111,60 @@ function auth_is_logged_in(): bool
 function auth_current_user_email(): ?string
 {
     return $_SESSION['user_email'] ?? null;
+}
+
+function auth_current_user_id(): ?int
+{
+    return $_SESSION['user_id'] ?? null;
+}
+
+function auth_current_user_role(): ?string
+{
+    return $_SESSION['user_role'] ?? null;
+}
+
+function auth_is_admin(): bool
+{
+    return auth_is_logged_in() && ($_SESSION['user_role'] ?? null) === 'admin';
+}
+
+function auth_get_all_users(): array
+{
+    $pdo = get_pdo();
+    $stmt = $pdo->query('SELECT id, email, role, created_at FROM users ORDER BY created_at DESC');
+    return $stmt->fetchAll();
+}
+
+function auth_update_user_role(int $userId, string $role, ?string &$error): bool
+{
+    $error = null;
+    
+    if (!in_array($role, ['user', 'admin'], true)) {
+        $error = 'Nieprawidłowa rola.';
+        return false;
+    }
+    
+    $pdo = get_pdo();
+    $stmt = $pdo->prepare('UPDATE users SET role = :role WHERE id = :id');
+    $stmt->execute(['role' => $role, 'id' => $userId]);
+    
+    return true;
+}
+
+function auth_delete_user(int $userId, ?string &$error): bool
+{
+    $error = null;
+    
+    if ($userId === auth_current_user_id()) {
+        $error = 'Nie możesz usunąć siebie.';
+        return false;
+    }
+    
+    $pdo = get_pdo();
+    $stmt = $pdo->prepare('DELETE FROM users WHERE id = :id');
+    $stmt->execute(['id' => $userId]);
+    
+    return true;
 }
 
 

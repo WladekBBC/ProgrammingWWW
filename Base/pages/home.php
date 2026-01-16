@@ -1,6 +1,15 @@
 <main class="container">
   <section class="card">
     <h2>Strona główna</h2>
+    
+    <!-- Licznik sesji -->
+    <div class="session-counter">
+      <p>
+        Liczba stron odwiedzonych w tej sesji: 
+        <strong><?= visits_get_session_counter() ?></strong>
+      </p>
+    </div>
+    
     <p>
       Witamy i przedstawiamy proces instalacji serwera Ubuntu stabilnej
       wersji 24.04 dla komputerów za pomocą programów
