@@ -14,6 +14,7 @@ $titles = [
     'login'        => 'Logowanie',
     'register'     => 'Rejestracja',
     'notes'        => 'Notatki (CRUD)',
+    'admin'        => 'Panel Administratora',
 ];
 
 $pageTitle = $titles[$currentPage] ?? 'Strona główna';
@@ -86,9 +87,20 @@ $pageTitle = $titles[$currentPage] ?? 'Strona główna';
            <?= $currentPage === 'notes' ? 'aria-current="page"' : '' ?>
         >Notatki (CRUD)</a>
 
+        <?php if (auth_is_admin()): ?>
+          <a href="index.php?page=admin"
+             class="nav-link<?= $currentPage === 'admin' ? ' active' : '' ?>"
+             data-nav
+             <?= $currentPage === 'admin' ? 'aria-current="page"' : '' ?>
+          >Panel Admina</a>
+        <?php endif; ?>
+
         <?php if (auth_is_logged_in()): ?>
           <span class="nav-user">
             Zalogowany: <?= htmlspecialchars(auth_current_user_email() ?? '') ?>
+          </span>
+          <span class="nav-session-counter">
+             Wizyt w sesji: <?= visits_get_session_counter() ?>
           </span>
           <a href="index.php?page=login&action=logout" class="nav-link" data-nav>Wyloguj</a>
         <?php else: ?>

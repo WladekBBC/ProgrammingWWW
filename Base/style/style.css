@@ -571,3 +571,242 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+/* ============================================
+   Panel Administratora / Admin Panel
+   ============================================ */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--card);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.admin-table thead {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: bold;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #1e1e21;
+}
+
+.admin-table tbody tr:hover {
+  background: #1a1a1e;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.role-form {
+  display: inline;
+}
+
+.role-select {
+  padding: 0.35rem 0.5rem;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid #1e1e21;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.role-select:hover {
+  border-color: var(--accent);
+}
+
+.btn-delete {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background: #c41e3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: #8b1528;
+}
+
+.admin-stats {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--accent);
+}
+
+.admin-stats h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.admin-stats p {
+  margin: 0.5rem 0;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.form-success {
+  padding: 1rem;
+  background: #1a5f3f;
+  color: #90ee90;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #2ecc71;
+}
+
+.form-error {
+  padding: 1rem;
+  background: #5f1a1a;
+  color: #ff7f7f;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.text-muted {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.note-preview {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* ============================================
+   Statystyki / Statistics
+   ============================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff6b8a 100%);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: white;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  background: #1a1a1e;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin: 0.25rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, #ff6b8a 100%);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* ============================================
+   Status Badges / Statusy
+   ============================================ */
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-online {
+  background: #1a5f3f;
+  color: #90ee90;
+}
+
+.status-active {
+  background: #5f4f1a;
+  color: #ffd700;
+}
+
+.status-today {
+  background: #1a3a5f;
+  color: #87ceeb;
+}
+
+.status-inactive {
+  background: #3a3a3a;
+  color: #b6b6b6;
+}
+
+/* ============================================
+   Session Counter / Licznik Sesji
+   ============================================ */
+.session-counter {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff6b8a 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(255, 77, 109, 0.3);
+}
+
+.session-counter p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.session-counter strong {
+  font-size: 1.5rem;
+  display: inline-block;
+  min-width: 3rem;
+}
+
+.nav-session-counter {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 77, 109, 0.15);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--accent);
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
